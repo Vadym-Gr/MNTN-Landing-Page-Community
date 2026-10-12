@@ -1,21 +1,108 @@
 .footer {
-  padding: 20px 0;
+  padding-bottom: 64px;
 }
-.footer-desc {
-  text-align: center;
+
+.footer-container {
+  display: grid;
+  gap: 40px;
+  width: min(100% - 144px, 1462px);
+  margin-left: max(20px, calc((100% - 1462px) / 2));
 }
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0.32px;
+}
+
+.footer-description {
+  max-width: 303px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.footer-copyright {
+  color: rgb(255 255 255 / 50%);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.footer-heading {
+  margin-bottom: 24px;
+  color: var(--color-accent);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .footer-link {
-  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  transition: color 160ms;
 }
-.footer-link::before {
-  content: '';
-  position: absolute;
-  bottom: 6%;
-  left: 50%;
-  transform: translateX(-50%) skewX(-12deg);
-  z-index: -1;
-  width: 110%;
-  height: 24%;
-  background-color: #41d1ff;
-  transition: 200ms ease;
+
+.footer-link[href]:hover,
+.footer-logo:hover {
+  color: var(--color-accent);
+}
+
+.footer-link[aria-disabled='true'] {
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100% - 164px, 1462px);
+    margin-left: max(40px, calc((100% - 1462px) / 2));
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    padding-bottom: 120px;
+  }
+
+  .footer-container {
+    grid-template-columns: minmax(0, 1fr) 193px 161px;
+    gap: clamp(40px, 11.041667vw, 212px);
+    min-height: 280px;
+    width: min(100% - 264px, 1462px);
+    margin-left: max(80px, calc((100% - 1462px) / 2));
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-heading {
+    white-space: nowrap;
+  }
+
+  .footer-copyright {
+    margin-top: auto;
+    padding-left: 6px;
+  }
 }

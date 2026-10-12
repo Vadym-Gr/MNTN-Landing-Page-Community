@@ -5,7 +5,7 @@ html {
 .section-nav {
   position: fixed;
   z-index: 9;
-  top: clamp(100px, calc(50vh - 120px), 326px);
+  top: max(calc(var(--header-height) + 16px), min(calc(50vh - 120px), 326px));
   right: 16px;
   width: 80px;
   filter: drop-shadow(0 0 20px rgb(0 0 0 / 20%));
@@ -55,16 +55,6 @@ html {
   max-width: calc(100% - 144px);
 }
 
-body > .footer {
-  padding-right: 124px;
-}
-
-body > .footer > .container {
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
-}
-
 @media (max-width: 767px) {
   .hero-title,
   .hiking-title {
@@ -98,9 +88,6 @@ body > .footer > .container {
     padding-right: 184px;
   }
 
-  body > .footer {
-    padding-right: max(184px, calc((100vw - 1760px) / 2 + 104px));
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
