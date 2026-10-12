@@ -1,17 +1,9 @@
 ﻿.header {
-  position: fixed;
+  position: absolute;
   inset: 0 0 auto;
   z-index: 10;
   padding-block: 24px;
   color: var(--color-text);
-  background: rgb(11 29 38 / 92%);
-  backdrop-filter: blur(12px);
-}
-:root {
-  --header-height: 92px;
-}
-html {
-  scroll-padding-top: var(--header-height);
 }
 .header-container {
   display: flex;
@@ -148,9 +140,6 @@ body.menu-open {
   overflow: hidden;
 }
 @media (min-width: 768px) {
-  :root {
-    --header-height: 124px;
-  }
   .header {
     padding-block: 40px;
   }
@@ -162,9 +151,6 @@ body.menu-open {
   }
 }
 @media (min-width: 1440px) {
-  :root {
-    --header-height: 152px;
-  }
   .header {
     padding-block: 54px;
   }
