@@ -1,3 +1,8 @@
+.landing-main {
+  position: relative;
+  isolation: isolate;
+}
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -9,6 +14,8 @@
   position: absolute;
   z-index: -1;
   inset: 0;
+  max-width: 1920px;
+  margin-inline: auto;
   overflow: hidden;
   pointer-events: none;
 }
@@ -30,7 +37,7 @@
 .hero-sky {
   top: -200px;
   aspect-ratio: 1920 / 1513;
-  background-image: url('../img/hero/sky-mobile.png');
+  background-image: url('../img/hero/sky-mobile.webp');
 }
 
 .hero-shade {
@@ -46,13 +53,13 @@
 .hero-mountains {
   top: 340px;
   aspect-ratio: 1920 / 1422;
-  background-image: url('../img/hero/mountains-mobile.png');
+  background-image: url('../img/hero/mountains-mobile.webp');
 }
 
 .hero-foreground {
   top: 570px;
   aspect-ratio: 1920 / 926;
-  background-image: url('../img/hero/foreground-mobile.png');
+  background-image: url('../img/hero/foreground-mobile.webp');
 }
 
 .hero-fade {
@@ -109,6 +116,7 @@
   min-height: 44px;
   font-size: 18px;
   font-weight: 700;
+  line-height: 24px;
   transition: color 180ms ease;
 }
 
@@ -135,6 +143,10 @@
   gap: 4px;
 }
 
+.hero-social-label {
+  white-space: nowrap;
+}
+
 .hero-social-link {
   display: flex;
   align-items: center;
@@ -151,25 +163,25 @@
 
 @media (min-resolution: 2dppx) {
   .hero-sky {
-    background-image: url('../img/hero/sky-source.png');
+    background-image: url('../img/hero/sky-source.webp');
   }
   .hero-mountains {
-    background-image: url('../img/hero/mountains-source.png');
+    background-image: url('../img/hero/mountains-source.webp');
   }
   .hero-foreground {
-    background-image: url('../img/hero/foreground-source.png');
+    background-image: url('../img/hero/foreground-source.webp');
   }
 }
 
 @media (min-width: 768px) {
   .hero-sky {
-    background-image: url('../img/hero/sky-source.png');
+    background-image: url('../img/hero/sky-source.webp');
   }
   .hero-mountains {
-    background-image: url('../img/hero/mountains-source.png');
+    background-image: url('../img/hero/mountains-source.webp');
   }
   .hero-foreground {
-    background-image: url('../img/hero/foreground-source.png');
+    background-image: url('../img/hero/foreground-source.webp');
   }
   .hero {
     min-height: 1100px;
@@ -214,6 +226,10 @@
   .hero {
     min-height: 1440px;
     padding: 287px 160px 100px;
+    isolation: auto;
+  }
+  .hero-landscape {
+    bottom: -460px;
   }
   .hero-content {
     gap: 32px;
@@ -241,27 +257,38 @@
     width: 100%;
   }
   .hero-sky {
-    top: -20.833333vw;
-    background-image: url('../img/hero/sky-source.png');
+    top: max(-20.833333vw, -400px);
+    background-image: url('../img/hero/sky-source.webp');
   }
   .hero-shade {
-    height: 62.5vw;
+    height: min(62.5vw, 1200px);
   }
   .hero-mountains {
-    top: 24.166667vw;
-    background-image: url('../img/hero/mountains-source.png');
+    top: min(24.166667vw, 464px);
+    background-image: url('../img/hero/mountains-source.webp');
   }
   .hero-foreground {
-    top: 40vw;
-    background-image: url('../img/hero/foreground-source.png');
+    top: min(40vw, 768px);
+    background-image: url('../img/hero/foreground-source.webp');
   }
   .hero-fade {
-    height: 440px;
+    top: min(62.5vw, 1200px);
+    bottom: auto;
+    height: min(36.458333vw, 700px);
+    background: linear-gradient(
+      to bottom,
+      rgb(11 29 38 / 0%),
+      var(--color-background) 61.384%
+    );
   }
   .hero-social {
     top: 359px;
     left: max(70px, calc((100% - 1780px) / 2));
     gap: 14px;
+  }
+  .hero-social-label {
+    height: 77px;
+    line-height: 22px;
   }
   .hero-social-list {
     gap: 4px;
@@ -269,10 +296,13 @@
 }
 
 @media (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero-sky {
+    background-image: url('../img/hero/sky-2x.webp');
+  }
   .hero-mountains {
-    background-image: url('../img/hero/mountains-2x.png');
+    background-image: url('../img/hero/mountains-2x.webp');
   }
   .hero-foreground {
-    background-image: url('../img/hero/foreground-2x.png');
+    background-image: url('../img/hero/foreground-2x.webp');
   }
 }

@@ -15,6 +15,8 @@
 /* Sections style */
 @import url('./header.css');
 @import url('./hero.css');
+@import url('./content.css');
+@import url('./navigation.css');
 @import url('./vite-promo.css');
 @import url('./badges.css');
 @import url('./back-link.css');

@@ -1,0 +1,110 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.section-nav {
+  position: fixed;
+  z-index: 9;
+  top: clamp(100px, calc(50vh - 120px), 326px);
+  right: 16px;
+  width: 80px;
+  filter: drop-shadow(0 0 20px rgb(0 0 0 / 20%));
+}
+
+.section-nav-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding-right: 24px;
+  border-right: 3px solid rgb(255 255 255 / 50%);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  transition: color 160ms, border-color 160ms;
+}
+
+.section-nav-link[aria-current='location'] {
+  color: var(--color-accent);
+  border-color: #fff;
+}
+
+.section-nav-link:hover,
+.section-nav-link:active {
+  color: var(--color-accent);
+}
+
+/* Reserve a clear lane for the fixed navigation while the page scrolls. */
+.hiking-content {
+  width: min(100% - 144px, 1462px);
+  margin-left: max(20px, calc((100% - 1462px) / 2));
+  margin-right: 124px;
+}
+
+.hero {
+  padding-right: 124px;
+}
+
+.hero-social {
+  flex-wrap: wrap;
+  max-width: calc(100% - 144px);
+}
+
+body > .footer {
+  padding-right: 124px;
+}
+
+body > .footer > .container {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .hero-title,
+  .hiking-title {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 768px) {
+  .hiking-content {
+    width: min(100% - 164px, 1462px);
+    margin-left: max(40px, calc((100% - 1462px) / 2));
+  }
+
+  .hero {
+    padding-right: 144px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section-nav {
+    right: max(24px, calc((100vw - 1760px) / 2));
+  }
+
+  .hiking-content {
+    width: min(100% - 264px, 1462px);
+    margin-left: max(80px, calc((100% - 1462px) / 2));
+    margin-right: 184px;
+  }
+
+  .hero {
+    padding-right: 184px;
+  }
+
+  body > .footer {
+    padding-right: max(184px, calc((100vw - 1760px) / 2 + 104px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
